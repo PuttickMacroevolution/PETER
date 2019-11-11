@@ -1,6 +1,6 @@
-Package: RSOLE
+Package: PETER
 Type: Package
-Title: R Simulations of Longterm Evolution
+Title: Phylogenetic Evolution of Traits & Extinction in R
 Version: 1.0
 Depends: R (>= 2.10.0), ape (>= 3.0-7), MASS
 Date: 2018-01-08
@@ -9,3 +9,7 @@ Maintainer: Mark Puttick <marknputtick@gmail.com>
 Description: Blah
 License: GPL (>= 2)
 RoxygenNote: 6.1.1
+LinkingTo:
+    Rcpp
+Imports:
+    Rcpp

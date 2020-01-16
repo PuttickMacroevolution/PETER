@@ -6,9 +6,12 @@ Depends: R (>= 2.10.0), ape (>= 3.0-7), MASS
 Date: 2018-01-08
 Author: Mark Puttick
 Maintainer: Mark Puttick <marknputtick@gmail.com>
-Description: Blah
+Description: Function to simulate trees and continuous Brownian motion data on
+  those trees simultaneously. Options allow for trait-selective or random MASS
+  extinctions to occur when a specific number of contemporary lineages are
+  present.
 License: GPL (>= 2)
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.1
 LinkingTo:
     Rcpp
 Imports:

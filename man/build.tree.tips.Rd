@@ -4,54 +4,69 @@
 \alias{build.tree.tips}
 \title{Simulate simultaneously phylogeny and trait evolution}
 \usage{
-build.tree.tips(lambda = 1, mu = 0, extant.tips = 100,
-  mass.ext.tips = 50, mass.ext.quantile = 0.5, n.characters = 1,
-  sigma.rates = 1, spp.size.prob = 0, ext.size.prob = 0,
-  larger.than = TRUE, both.sides = FALSE, mass.ext.occ = TRUE,
-  mass.ext.severity = 0.5, trait.axes = NULL, chance.of.random = 0.1,
-  upperBound = Inf, lowerBound = -Inf, return.trait.matrix = TRUE,
-  return.branch.value.list = FALSE, return.time.list = FALSE)
+build.tree.tips(
+  lambda = 1,
+  mu = 0,
+  extant.tips = 100,
+  mass.ext.tips = 50,
+  mass.ext.quantile = 0.5,
+  n.characters = 1,
+  sigma.rates = 1,
+  spp.size.prob = 0,
+  ext.size.prob = 0,
+  larger.than = TRUE,
+  both.sides = FALSE,
+  mass.ext.occ = TRUE,
+  mass.ext.severity = 0.5,
+  trait.axes = NULL,
+  chance.of.random = 0.1,
+  upperBound = Inf,
+  lowerBound = -Inf,
+  return.trait.matrix = TRUE,
+  return.branch.value.list = FALSE,
+  return.time.list = FALSE
+)
 }
 \arguments{
-\item{lambda}{Speciation rate}
+\item{lambda}{Speciation rate.}
 
-\item{mu}{Extinction rate. If mu=0, then the simulation follows a Yule pure birth process}
+\item{mu}{Extinction rate. If mu=0, then the simulation follows a Yule pure birth process.}
 
 \item{extant.tips}{The number of extant lineages with which to end the simulation. Must be > 0.}
 
-\item{mass.ext.tips}{The numebr of extant lineages to reach before a mass extinction. Not applicable if mass.ext.occ=FALSE}
+\item{mass.ext.tips}{The number of contemporary lineages the simulation reaches before a mass extinction. Not applicable if mass.ext.occ = FALSE.}
 
 \item{mass.ext.quantile}{The cut-off for the trait values selected for extinction during the mass extinction event. Values above mass.ext.quantile will be marked for loss during the mass extinction event.}
 
-\item{n.characters}{the number of trait characters to simulate under a Brownian motion process}
+\item{n.characters}{The number of trait characters to simulate under a Brownian motion process.}
 
-\item{sigma.rates}{Either a vector or matrix specifying the rates of character evolution. If a vector then all traits evolve independently, and values are recylced if the length is less than n.characters. If a square matrix, this specifies the relative rates (diagonals) and correlation between traits (off-diagonals)}
+\item{sigma.rates}{Either a vector or matrix specifying the rates of character evolution. If a vector then all traits evolve independently, and values are recycled if the length is less than n.characters. If a square matrix, this specifies the relative rates (diagonals) and correlation between traits (off-diagonals).}
 
-\item{spp.size.prob}{Probability of lineages with smaller trait values splitting during 'background' times. If the value is 0 then all lineages have an equal probability of splitting; larger values mean lineages with smaller trait values are more likely to split, and values < 0 mean lineages with larger trait values are more likely to split}
+\item{spp.size.prob}{Probability of lineages with smaller trait values splitting during 'background' times. If the value is 0 then all lineages have an equal probability of splitting; larger values mean lineages with smaller trait values are more likely to split, and values < 0 mean lineages with larger trait values are more likely to split.}
 
-\item{ext.size.prob}{Probability of lineages with larger trait values going extinct during 'background' times. If the value is 0 then all lineages have an equal probability of extinction; larger values mean lineages with larger trait values are more likely to go extinct, and values < 0 mean lineages with smaller trait valyes are more likely to go extinct}
+\item{ext.size.prob}{Probability of lineages with larger trait values going extinct during 'background' times. If the value is 0 then all lineages have an equal probability of extinction; larger values mean lineages with relatively bigger trait values are more likely to go extinct, and values < 0 mean lineages with smaller trait values are more likely to go extinct.}
 
-\item{larger.than}{Logical. If TRUE, then mass extinction selection occurs on traits larger than the proportion indicated by 'mass.ext.quantile'. If FALSE, the smaller traits are selected for extinction}
+\item{larger.than}{Logical. If TRUE, then mass extinction selection occurs on traits larger than the proportion indicated by 'mass.ext.quantile'. If FALSE, the smaller traits are selected for extinction.}
 
-\item{both.sides}{Logical. If TRUE, then mass extinction selection occurs on at the extreme ends of trait distribution. NOTE - this over-rides the argument 'larger than' so default is FALSE.}
+\item{both.sides}{Logical. If TRUE, then mass extinction selection occurs on at the extreme ends of trait distribution. NOTE - this over-rides the argument 'larger.than' so the default is FALSE.}
 
 \item{mass.ext.occ}{Logical specifying if a mass extinction occurs at the time given by time.limit.mass.ext (default = TRUE).}
 
-\item{mass.ext.severity}{the proportion of lineages that succumb to extinction, not applicable if mass.ext.occ=FALSE}
+\item{mass.ext.severity}{The proportion of lineages that succumb to extinction, not applicable if mass.ext.occ=FALSE.}
 
-\item{trait.axes}{The trait axes on which selection will occur. The default (NULL) acts on all trait axes}
+\item{trait.axes}{The trait axes on which selection will occur. The default (NULL) acts on all trait axes.}
 
-\item{chance.of.random}{Numeric. A value to specify the 'selectivity' of extinction. If chance.of.random=0 only lineages with trait values above or below the limit specified by mass.ext.quantile will go extinct. Values > 0 and < 1 indicate the trait is selected for with decreasing strength, until chance.of.random = 1 at which point all lineages are equally likely to go extinct}
+\item{chance.of.random}{Numeric value to specify the selectivity of extinction. If chance.of.random = 0, extinction is strict and only lineages with trait values above or below the limit specified by mass.ext.quantile will go extinct. Values > 0 and < 1 indicate the trait is selected for with decreasing strength, until chance.of.random = 1 at which point all lineages are equally likely to go extinct.}
 
-\item{upperBound}{The upper bound allowed for trait values. Trait space can be constrained by specifying a value rather than then default (Inf)}
+\item{upperBound}{The upper bound allowed for trait values. Trait space can be constrained by specifying a value rather than then default (Inf).}
 
-\item{lowerBound}{The lower bound allowed for trait values. Trait space can be constrained by specifying a value rather than then default (-Inf)}
+\item{lowerBound}{The lower bound allowed for trait values. Trait space can be constrained by specifying a value rather than then default (-Inf).}
 
-\item{return.trait.matrix}{Logical. If TRUE the values at internal and external nodes is returned in a matrix corresponding to the APE phylo edge format}
+\item{return.trait.matrix}{Logical. If TRUE, the values at internal and external nodes is returned in a matrix corresponding to the APE phylo edge format.}
 
-\item{return.branch.value.list}{Logical. Returns a list with all trait values at every time point. Default is FALSE as TRUE can results in huge files}
+\item{return.branch.value.list}{Logical. Returns a list with all trait values at every time point. Default is FALSE as TRUE can results in huge files.}
 
-\item{return.time.list}{Logical. Returns a list with every time points at which the simulation ran. Default is FALSE as TRUE can results in huge files}
+\item{return.time.list}{Logical. Returns a list with every time points at which the simulation ran. Default is FALSE as TRUE can results in huge files.}
 }
 \value{
 A list containing:
@@ -60,10 +75,10 @@ A list containing:
 \item {root.state} {value(s) for trait(s) at the root}
 \item {trait.matrix} {List of trait values at all internal nodes and tips on the phylogeny. If n.characters > 1, then there are list entries for each trait value}
 \item {branch.value.list.out} {The value of traits at each time unit in the simulation. Each list element corresponds to the edge in the phy$edge matrix, and the time given by time.list.out}
-\item {vtt} {The variance measured at each node of the phylogeny to give 'variance-through-time' data. Only returned if return.through.time=TRUE}
-\item {ltt} {The number of lineages measured at each node of the phylogeny to give 'lineage-through-time' data. Only returned if return.through.time=TRUE}
-\item {vtt.extant} {The variance measured at each node of the phylogeny to give 'variance-through-time' data based on lineages that survive to present only. Only returned if return.through.time.extant=TRUE}
-\item {ltt.extant} {The number of lineages measured at each node of the phylogeny to give 'lineage-through-time' data based on lineages that survive to present only. Only returned if return.through.time.extant=TRUE}
+\item {vtt} {The variance measured at each node of the phylogeny to give 'variance-through-time' data. Only returned if return.through.time = TRUE}
+\item {ltt} {The number of lineages measured at each node of the phylogeny to give 'lineage-through-time' data. Only returned if return.through.time = TRUE}
+\item {vtt.extant} {The variance measured at each node of the phylogeny to give 'variance-through-time' data based on lineages that survive to present only. Only returned if return.through.time.extant = TRUE}
+\item {ltt.extant} {The number of lineages measured at each node of the phylogeny to give 'lineage-through-time' data based on lineages that survive to present only. Only returned if return.through.time.extant = TRUE}
 }
 }
 \description{

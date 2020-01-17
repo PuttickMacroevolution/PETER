@@ -12,7 +12,3 @@ Description: Function to simulate trees and continuous Brownian motion data on
   present.
 License: GPL (>= 2)
 RoxygenNote: 7.0.1
-LinkingTo:
-    Rcpp
-Imports:
-    Rcpp

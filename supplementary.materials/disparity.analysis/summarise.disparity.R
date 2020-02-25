@@ -25,32 +25,27 @@ ltt.out <- list()
 
 for (xx in 1:100) {
   ltt.out.temp <- in.file[[xx]]$ltt
-	going <- c()
-	root.state <- in.file[[xx]]$root.state
-	x.out <- sapply(in.file[[xx]]$node.traits, function(x) {
-	  x.in <- as.matrix(x)
-		n.col <- ncol(x.in)
-		if (nrow(x.in) > 2) {
-		  euclid.out <- unlist(dispRity(x.in,
-			  metric = c(median, pairwise.dist), method = "euclidean")$disparity)
-			if (n.col == 1)
-			  x.in <- cbind(as.matrix(x), 0)
-			sov.out <- unlist(dispRity(x.in, metric = c(sum, variances))$disparity)
-			sor.out <- unlist(dispRity(x.in, metric = c(sum, ranges))$disparity)
-			if (n.col == 1)
-			  x.in <- cbind(as.matrix(x), in.file[[xx]]$root.state)
-			centroid.out <- unlist(dispRity(x.in,
-			  metric = c(centroids, median), centroid = root.state)$disparity)
-			cbind(euclid.out, sov.out, sor.out, centroid.out)
-		} else {
-		  cbind(rep(NA, 4))
-		}
-	})
-	x.out <- t(x.out)
-	node.info <- cbind(ltt.out.temp, x.out)
-	colnames(node.info)[-c(1:2)] <-
-	  c("median.euclidean", "sov", "sor", "centroid")
-	ltt.out[[xx]] <- node.info
+  going <- c()
+  root.state <- in.file[[xx]]$root.state
+  x.out <- sapply(in.file[[xx]]$node.traits, function(x) {
+    x.in <- as.matrix(x)
+	n.col <- ncol(x.in)
+	if (nrow(x.in) > 2) {
+	  euclid.out <- unlist(dispRity(x.in,
+	    metric = c(median, pairwise.dist), method = "euclidean")$disparity)
+	  if (n.col == 1)
+	    x.in <- cbind(as.matrix(x), 0)
+	  sov.out <- unlist(dispRity(x.in, metric = c(sum, variances))$disparity)
+	  sor.out <- unlist(dispRity(x.in, metric = c(sum, ranges))$disparity)
+	  cbind(euclid.out, sov.out, sor.out)
+    } else {
+	  cbind(rep(NA, 3))
+	}
+  })
+  x.out <- t(x.out)
+  node.info <- cbind(ltt.out.temp, x.out)
+  colnames(node.info)[-c(1:2)] <- c("median.euclidean", "sov", "sor")
+  ltt.out[[xx]] <- node.info
 }
 
 ltt.write <- gsub(".R", ".dvltt", input.file)

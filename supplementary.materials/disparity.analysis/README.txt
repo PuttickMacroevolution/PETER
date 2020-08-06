@@ -1,5 +1,5 @@
 README
-R code to run all simulations and analyse presented in XXX et al. 
+R code to run all simulations and analyse presented in Puttick et al. 2020. "The complex effects of mass extinctions on morphological disparity", Evolution. 
 
 FILE
 

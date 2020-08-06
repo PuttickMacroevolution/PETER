@@ -1,6 +1,6 @@
 README
 
-Run all simulations presented in XXX et al. 
+Run all simulations presented in Puttick et al. 2020, "The complex effects of mass extinctions on morphological disparity"
 
 # Generate trees and traits with no mass extinction.
 	no.extinction.simulation.R

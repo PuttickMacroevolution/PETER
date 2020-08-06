@@ -1,4 +1,6 @@
-## XXX et al.
+## Puttick et al. 2020. "The complex effects of mass extinctions on
+## morphological disparity", Evolution.
+
 ## Estimate disparity in a series of time bins with disparity estimated using
 ## median pairwise euclidean distance, median pairwise distance from the root,
 ## Sum Of Variances, and Sum Of Ranges using the dispRity package.
@@ -85,4 +87,4 @@ library(dispRity)
 	})
 	
   names(all.outs) <- sigma.files
-  saveRDS(all.outs, "../disparity.analysis/outputs/tips_50.mu_0.4.severity_0.5.random_0.01_bin")	
+  saveRDS(all.outs, "../disparity.analysis/outputs/tips_50.mu_0.4.severity_0.5.random_0.01_bin")

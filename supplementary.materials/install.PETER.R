@@ -1,5 +1,7 @@
-# install PETER package to run simulations from XXX et al.
-# [not available for review from here]
+## Install PETER package to run simulations from
+## Puttick et al. 2020. "The complex effects of mass extinctions on
+## morphological disparity", Evolution
+
 install.packages("devtools")
 library(devtools)
-install_github("XXX/PETER")
+install_github("PuttickMacroevolution/PETER")

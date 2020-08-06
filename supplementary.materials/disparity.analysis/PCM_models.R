@@ -1,4 +1,6 @@
-## XXX et al.
+## Puttick et al. 2020. "The complex effects of mass extinctions on
+## morphological disparity", Evolution.
+
 ## Take simulated data and pruned trees of all fossils, then estimate
 ## parameters Phylogenetic Comparative models: Brownian motion,
 ## Ornstein-Uhlenbeck, and Early Burst using the motmot package.

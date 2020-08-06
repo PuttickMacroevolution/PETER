@@ -1,4 +1,6 @@
-## XXX et al.
+## Puttick et al. 2020. "The complex effects of mass extinctions on
+## morphological disparity", Evolution.
+
 ## Take simulated data and pruned trees of all fossils, then estimate
 ## phylogenetic signal of mass extinctions using the phylo D statistic and
 ## estimate PGLS models of trait value ~ extinction.

@@ -1,4 +1,6 @@
-## XXX et al.
+## Puttick et al. 2020. "The complex effects of mass extinctions on
+## morphological disparity", Evolution.
+
 ## Estimate disparity for generated data using median pairwise euclidean
 ## distance, median pairwise distance from the root, Sum Of Variances, and
 ## Sum Of Ranges using the dispRity package.

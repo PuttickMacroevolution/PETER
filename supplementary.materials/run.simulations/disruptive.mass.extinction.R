@@ -1,4 +1,6 @@
-## XXX et al.
+## Puttick et al. 2020. "The complex effects of mass extinctions on
+## morphological disparity", Evolution.
+
 ## Code to simulate diversity and trait data through time with a disruptive
 ## mass extinction when 50, 100, or 200 taxa are present.
 

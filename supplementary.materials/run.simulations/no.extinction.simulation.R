@@ -1,4 +1,7 @@
-## XXX et al. Code to simulate diversity and trait data through time with no
+## Puttick et al. 2020. "The complex effects of mass extinctions on
+## morphological disparity", Evolution.
+
+## Code to simulate diversity and trait data through time with no
 ## mass extinction simulation, in simulations with one, two, and five traits
 ## generated under Brownian motion and trees generated under homogeneous
 ## birth-death processes.
